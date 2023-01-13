@@ -2,6 +2,7 @@ import './App.css';
 import Button from './components/Button'
 import CocktailCards from './components/CocktailCardComponent';
 import logo from "../src/resources/martinez.jpg"
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           picture={logo}
           title="Martinez"
         ></CocktailCards>
+      <NavBar title='TravelBar' />
     </div>
   );
 }
