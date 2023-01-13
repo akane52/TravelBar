@@ -3,6 +3,7 @@ import Button from './components/Button'
 import CocktailCards from './components/CocktailCardComponent';
 import logo from "../src/resources/martinez.jpg"
 import NavBar from './components/NavBar';
+import MusicIcon from './components/MusicIcon';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           title="Martinez"
         ></CocktailCards>
       <NavBar title='TravelBar' />
+      <MusicIcon />
     </div>
   );
 }
