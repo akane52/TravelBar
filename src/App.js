@@ -1,9 +1,14 @@
 import './App.css';
+import CocktailCards from './components/CocktailCardComponent';
+import logo from "../src/resources/martinez.jpg"
 
 function App() {
   return (
-    <div className="App">
-      <p>prueba</p>
+    <div>
+        <CocktailCards
+          picture={logo}
+          title="Martinez"
+        ></CocktailCards>
     </div>
   );
 }
