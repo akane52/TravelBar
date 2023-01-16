@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, InformationSquare, PurpleSquare, BarPicture, Information } from "./styles";
+import { Title, InformationSquare, PurpleSquare, BarPicture, Information, Picture } from "./styles";
 
 const TravelBarInformation = ({picture}) =>{
     return (
@@ -16,7 +16,9 @@ const TravelBarInformation = ({picture}) =>{
                         <br></br><br></br>Just come and have fun!!
                     </InformationSquare>
                 </PurpleSquare>
-                <BarPicture src={picture}></BarPicture>
+                <Picture>
+                    <BarPicture src={picture}></BarPicture>
+                </Picture>
             </Information>
         </div>
     )
