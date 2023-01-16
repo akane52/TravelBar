@@ -24,7 +24,6 @@ export const PurpleSquare = styled.div`
     margin-right: 4%;
     margin-left: -1%;
     height: 100%;
-    border: 1px solid red;
 `
 
 export const BarPicture = styled.img`
