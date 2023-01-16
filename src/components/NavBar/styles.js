@@ -26,5 +26,5 @@ export const Button = styled.button`
     cursor:pointer;
 `
 export const Buttons = styled.div`
-    margin-left: 70%;
+    margin-left: 65%;
 `
