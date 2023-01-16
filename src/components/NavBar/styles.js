@@ -5,6 +5,7 @@ export const Header = styled.header`
     color: #BC6FF1;
     border-bottom: 7px solid #52057B;
     position: relative;
+    margin-bottom: 1%;
 `
 
 export const Title = styled.h1`
