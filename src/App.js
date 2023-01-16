@@ -13,6 +13,8 @@ function App() {
     <Main className="App">
       <NavBar title='TravelBar' 
       />
+      <FirstPagePhoto
+        picture={barPrincipal}></FirstPagePhoto>
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
