@@ -9,7 +9,8 @@ import barPhoto from "../src/resources/barPhoto.jpg"
 function App() {
   return (
     <Main className="App">
-      <NavBar title='TravelBar' />
+      <NavBar title='TravelBar' 
+      />
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
