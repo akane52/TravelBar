@@ -23,12 +23,13 @@ export const PurpleSquare = styled.div`
     align-content: center;
     margin-right: 4%;
     margin-left: -1%;
-    height: 30%;
+    height: 100%;
+    border: 1px solid red;
 `
 
 export const BarPicture = styled.img`
     border-radius: 10px;
-    height: 18%;
+    height: 100%;
     width: 18%;
     margin-right: 5%;
 `
