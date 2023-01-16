@@ -11,9 +11,8 @@ import barPrincipal from "../src/resources/bar.jpg"
 function App() {
   return (
     <Main className="App">
-      <NavBar title='TravelBar' />
-      <FirstPagePhoto
-        picture={barPrincipal}></FirstPagePhoto>
+      <NavBar title='TravelBar' 
+      />
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
