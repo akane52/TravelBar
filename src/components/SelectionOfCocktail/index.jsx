@@ -1,14 +1,14 @@
-import { SelectionList } from './styles'
+import { SelectionList, DrinkItem } from './styles'
 import CocktailCards from '../CocktailCardComponent';
 
 const SelectionOfCocktails = ({ list }) => {
     return (
       <SelectionList>
         {list.map((item) => {
-        return <li key={item.idDrink} ><CocktailCards
+        return <DrinkItem key={item.idDrink} ><CocktailCards
         picture={item.strDrinkThumb}
         title={item.strDrink}
-      ></CocktailCards></li>
+      ></CocktailCards></DrinkItem>
       })}
       </SelectionList>
     )
