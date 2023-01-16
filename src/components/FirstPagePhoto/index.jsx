@@ -1,10 +1,13 @@
 import React from "react";
-import {   } from "./styles";
+import { Image, BarName, QuoteOfTheDay  } from "./styles";
 
-const FirstPagePhoto = () =>{
+const FirstPagePhoto = ({picture}) =>{
+
     return (
         <div>
-            
+           <Image src={picture}></Image>
+           <BarName>TravelBar</BarName>
+           <QuoteOfTheDay>prueba</QuoteOfTheDay>
         </div>
     )
 }

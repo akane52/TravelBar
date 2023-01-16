@@ -5,11 +5,15 @@ import logo from "../src/resources/martinez.jpg"
 import NavBar from './components/NavBar';
 import TravelBarInformation from './components/InformationComponent/index'
 import barPhoto from "../src/resources/barPhoto.jpg"
+import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
+import barPrincipal from "../src/resources/bar.jpg"
 
 function App() {
   return (
     <Main className="App">
       <NavBar title='TravelBar' />
+      <FirstPagePhoto
+        picture={barPrincipal}></FirstPagePhoto>
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
