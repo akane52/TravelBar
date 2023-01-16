@@ -14,7 +14,7 @@ function App() {
   const [data, setData] = useState()
 
   useEffect(() => {
-    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+    Axios.get('http://quotes.rest/qod.json?category=management')
     .then(response => {
       setData(response.data)
     })
@@ -22,13 +22,14 @@ function App() {
 
   console.log(data)
 
-
   return (
     <Main className="App">
       <NavBar title='TravelBar' 
       />
-      <FirstPagePhoto
-        picture={barPrincipal}></FirstPagePhoto>
+        <FirstPagePhoto
+          picture={barPrincipal}
+          // quote={data.quote}
+        ></FirstPagePhoto>
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
