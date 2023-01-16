@@ -7,19 +7,24 @@ import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import TravelBarInformation from './components/InformationComponent/index'
 import barPhoto from "../src/resources/barPhoto.jpg"
-
+async function si(data){
+  data.map(id => 
+    console.log(id.strDrink)
+  )
+}
 function App() {
   const [data, setData] = useState()
-
   useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
     .then(response => {
-      setData(response.data)
+      console.log(response.data.drinks)
+      setData(response.data.drinks)
     })
   },[setData])
 
-  console.log(data)
 
+  console.log(data)
+  si(data)  
 
   return (
     <Main className="App">
