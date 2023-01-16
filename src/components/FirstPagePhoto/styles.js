@@ -13,6 +13,10 @@ export const BarName = styled.h1`
     font-size: 50px;
     text-shadow: 1px 1px 2px black;
 `
-export const QuoteOfTheDay = styled.h2`
-
+export const QuoteOfTheDay = styled.h3`
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 `
