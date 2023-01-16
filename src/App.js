@@ -5,7 +5,8 @@ import logo from "../src/resources/martinez.jpg"
 import NavBar from './components/NavBar';
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
-
+import TravelBarInformation from './components/InformationComponent/index'
+import barPhoto from "../src/resources/barPhoto.jpg"
 
 function App() {
   const [data, setData] = useState()
@@ -22,7 +23,11 @@ function App() {
 
   return (
     <Main className="App">
-      <NavBar title='TravelBar' />
+      <NavBar title='TravelBar' 
+      />
+      <TravelBarInformation
+        picture={barPhoto}
+      ></TravelBarInformation>
       <Button text= 'See More' />
       <CocktailCards
           picture={logo}
