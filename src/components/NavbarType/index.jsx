@@ -1,10 +1,11 @@
+import  { ContainerNB }  from './styles'
 
 const NavbarType = () => {
     return (
-      <div>
-        
-      </div>
+      <ContainerNB>
+        <p>hola</p>
+      </ContainerNB>
     )
   }
   
-  export default Button
+  export default NavbarType

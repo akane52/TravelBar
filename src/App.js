@@ -7,6 +7,9 @@ import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import TravelBarInformation from './components/InformationComponent/index'
 import barPhoto from "../src/resources/barPhoto.jpg"
+
+import NavBarType from './components/NavbarType';
+
 async function si(data){
   data.map(id => 
     console.log(id.strDrink)
@@ -30,6 +33,7 @@ function App() {
     <Main className="App">
       <NavBar title='TravelBar' 
       />
+      <NavBarType/>
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
