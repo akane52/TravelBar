@@ -6,6 +6,6 @@ export const Main = styled.div`
     padding-bottom: 1%;
 `
 
-export const SelectionTitle = styled.h2`
+export const SelectionTitle = styled.h1`
     color: #892CDC;
 `
