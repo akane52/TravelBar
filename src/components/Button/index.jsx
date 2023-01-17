@@ -1,8 +1,8 @@
 import { BtnStyle } from './styles'
 
-const Button = ({ text }) => {
+const Button = ({ text, state, more }) => {
     return (
-      <BtnStyle>{text}</BtnStyle>
+      <BtnStyle onClick={() => {state(more)}}>{text}</BtnStyle>
     )
   }
   
