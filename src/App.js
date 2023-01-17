@@ -1,4 +1,4 @@
-import { Main } from './styles.js';
+import { Main, SelectionTitle } from './styles.js';
 import Button from './components/Button'
 import NavBar from './components/NavBar';
 import { useState,useEffect } from 'react';
@@ -25,8 +25,9 @@ function App() {
       <TravelBarInformation
         picture={barPhoto}
       ></TravelBarInformation>
+      <SelectionTitle>Selection of Cocktail</SelectionTitle> 
       {!data ? (<p>oops...something went wrong</p>) 
-      : (<SelectionOfCocktails list={ data.drinks.slice(0,8) } ></SelectionOfCocktails>)
+      : (<SelectionOfCocktails list={ data.drinks.slice(60,70) } ></SelectionOfCocktails>)
       }
       <Button text= 'See More' />
     </Main>
