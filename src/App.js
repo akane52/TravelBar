@@ -9,46 +9,40 @@ import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
 import barPrincipal from "../src/resources/bar.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 
+
 function App() {
   const [data, setData] = useState()
   const [see, setSee] = useState()
+  const [dataQuote, setDataQuote] = useState()
 
   useEffect(() => {
     Axios.get('http://quotes.rest/qod.json?category=management')
+    .then(response => {
+      setDataQuote(response.dataQuote)
+    })
+  },[setData])
+
+  console.log(dataQuote)
+
+  useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
     .then(response => {
       setData(response.data)
     })
   },[setData])
 
-  console.log(data)
-
-  return (
-    <Main className="App">
-      <NavBar title='TravelBar' 
-      />
-        <FirstPagePhoto
-          picture={barPrincipal}
-          // quote={data.quote}
-        ></FirstPagePhoto>
-      <TravelBarInformation
-        picture={barPhoto}
-      ></TravelBarInformation>
-      <Button text= 'See More' />
-      <CocktailCards
-          picture={logo}
-          title="Martinez"
-        ></CocktailCards>
-    </Main>
-  );
   if(!see){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
+        <FirstPagePhoto
+          picture={barPrincipal}
+          // quote={data.quote}
+        ></FirstPagePhoto>
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
-        <SelectionTitle>Selection of Cocktail</SelectionTitle>
+        <SelectionTitle>Random selection of Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
@@ -60,7 +54,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
-        <SelectionTitle>All Cocktail</SelectionTitle>
+        <SelectionTitle>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
         }
