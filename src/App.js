@@ -8,6 +8,7 @@ import barPhoto from "../src/resources/barPhoto.jpg"
 import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
 import barPrincipal from "../src/resources/bar.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
+import NavBarType from './components/NavbarType';
 
 function App() {
   const [data, setData] = useState()

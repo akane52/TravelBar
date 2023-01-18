@@ -1,0 +1,15 @@
+.noAchoholText {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.allTextSelected {
+    color: #9747FF;
+}
+.withAchoholTextSelected {
+    color: #9747FF;
+}
+.noAchoholTextSelected {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: #9747FF;
+}
