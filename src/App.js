@@ -9,20 +9,9 @@ import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
 import barPrincipal from "../src/resources/bar.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 
-
 function App() {
   const [data, setData] = useState()
   const [see, setSee] = useState()
-  const [dataQuote, setDataQuote] = useState()
-
-  useEffect(() => {
-    Axios.get('http://quotes.rest/qod.json?category=management')
-    .then(response => {
-      setDataQuote(response.dataQuote)
-    })
-  },[setData])
-
-  console.log(dataQuote)
 
   useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
@@ -31,14 +20,15 @@ function App() {
     })
   },[setData])
 
+  const a = QuoteOfTheDay()
+  console.log(a)
+
   if(!see){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
-        <FirstPagePhoto
-          picture={barPrincipal}
-          // quote={data.quote}
-        ></FirstPagePhoto>
+        {!data ? (<p>oops...something went wrong</p>) 
+        : (<FirstPagePhoto picture={barPrincipal} quote={a.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
@@ -62,6 +52,21 @@ function App() {
       </Main>
     );
   }
+}
+
+async function QuoteOfTheDay (){
+  let headersList = {
+    "Accept": "*/*",
+   }
+   
+   let reqOptions = {
+     url: "http://quotes.rest/qod.json?category=funny",
+     method: "GET",
+     headers: headersList,
+   }
+   
+   let response = await Axios.request(reqOptions);
+   console.log(response.data);
 }
 
 export default App;
