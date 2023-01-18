@@ -23,21 +23,18 @@ function App() {
   },[setData])
 
   useEffect(() => {
-    Axios.get('http://quotes.rest/qod.json?category=funny')
+    Axios.get('https://type.fit/api/quotes')
     .then(response => {
       setDataQuote(response.data)
     })
   },[setDataQuote])
 
-  console.log(dataQuote)
-
-
   if(!see){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
-        {!data ? (<p>oops...something went wrong </p>) 
-        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
+        {!dataQuote ? (<p>oops...something went wrong </p>) 
+        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote[Math.floor(Math.random() * 1400)].text}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
