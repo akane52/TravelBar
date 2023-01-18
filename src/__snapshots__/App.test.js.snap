@@ -74,7 +74,6 @@ exports[`should take a snapshot from App 1`] = `
     </p>
     <button
       class="css-ref9l6"
-      data-testid="buttonMore"
     >
       See More
     </button>
