@@ -45,7 +45,7 @@ function App() {
     })
   },[setDataQuote])
 
-  if(!see){
+  if(see === 'main'){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
