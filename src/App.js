@@ -50,6 +50,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
+        <NavBarType></NavBarType>
         <SelectionTitle>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
