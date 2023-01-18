@@ -31,13 +31,12 @@ function App() {
 
   console.log(dataQuote)
 
-
   if(!see){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
         {!data ? (<p>oops...something went wrong </p>) 
-        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
+        : (<FirstPagePhoto picture={barPrincipal}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
