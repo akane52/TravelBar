@@ -6,14 +6,8 @@ import Axios from 'axios';
 import TravelBarInformation from './components/InformationComponent/index'
 import barPhoto from "../src/resources/barPhoto.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
-
 import NavBarType from './components/NavbarType';
 
-async function si(data){
-  data.map(id => 
-    console.log(id.strDrink)
-  )
-}
 function App() {
   const [data, setData] = useState()
   const [see, setSee] = useState()
@@ -21,8 +15,7 @@ function App() {
   useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
     .then(response => {
-      console.log(response.data.drinks)
-      setData(response.data.drinks)
+      setData(response.data)
     })
   },[setData])
 
@@ -30,6 +23,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
+        <NavBarType selected='withAlchoholText'/>
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
