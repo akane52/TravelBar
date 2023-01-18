@@ -39,7 +39,6 @@ function App() {
   },[setNoAlcohol])
 
   useEffect(() => {
-    Axios.get('http://quotes.rest/qod.json?category=funny')
     Axios.get('https://type.fit/api/quotes')
     .then(response => {
       setDataQuote(response.data)
