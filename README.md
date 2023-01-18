@@ -1,5 +1,5 @@
 # TravelBar
-**Índice** 
+## Índex
 1. [Cover photo](#id1)
 2. [Badges](#id2)
 3. [Project description](#id3)
@@ -26,8 +26,7 @@ This is a bar where you can dance, play board games, listen to music... We also 
 :construction: Project under construction :construction:
 
 ## Project accessibility<a name="id5"></a>
-### 📁 Project access
-https://travel-bar.vercel.app
+📁 https://travel-bar.vercel.app
 
 ## ✔️ Technologies used<a name="id6"></a>
 - React
