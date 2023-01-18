@@ -36,12 +36,12 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
-        {!data ? (<p>oops...something went wrong</p>) 
+        {!data ? (<p>oops...something went wrong </p>) 
         : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
-        <SelectionTitle data-testid='selection'>Selection of Cocktail</SelectionTitle>
+        <SelectionTitle data-testid='selection'>Random selection of Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
