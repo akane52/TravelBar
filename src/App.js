@@ -8,6 +8,7 @@ import barPhoto from "../src/resources/barPhoto.jpg"
 import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
 import barPrincipal from "../src/resources/bar.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
+import NavBarType from './components/NavbarType';
 
 function App() {
   const [data, setData] = useState()
@@ -39,19 +40,22 @@ function App() {
 
   useEffect(() => {
     Axios.get('http://quotes.rest/qod.json?category=funny')
+    Axios.get('https://type.fit/api/quotes')
     .then(response => {
       setDataQuote(response.data)
     })
   },[setDataQuote])
 
-  if(see === 'main'){
+  if(!see){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' view={ setSee } />
+        <NavBar title='TravelBar' />
+        {!dataQuote ? (<p>oops...something went wrong </p>) 
+        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote[Math.floor(Math.random() * 1400)].text}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
-        <SelectionTitle data-testid='selection'>Selection of Cocktail</SelectionTitle>
+        <SelectionTitle data-testid='selection'>Random selection of Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }

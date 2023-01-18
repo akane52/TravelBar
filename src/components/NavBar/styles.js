@@ -1,6 +1,9 @@
 import styled from '@emotion/styled'
 
 export const Header = styled.header`
+    @media (max-width: 700px) {
+        display: block;
+    }
     background-color: #1E1E1E;
     color: #892CDC;
     border-bottom: 7px solid #52057B;
@@ -15,6 +18,9 @@ export const Title = styled.h1`
     padding-left: 3%;
 `
 export const Button = styled.button`
+    @media (max-width: 700px) {
+        font-size: 15px;
+    }
     color: #D9D9D9;
     background: none;
     border: none;
@@ -26,6 +32,11 @@ export const Button = styled.button`
     cursor:pointer;
 `
 export const Buttons = styled.div`
+    @media (max-width: 700px) {
+        margin-top: -19%;
+        margin-left: 5%;
+        position: relative;
+    }
     position: absolute;
     right: 0;
 `
