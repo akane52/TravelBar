@@ -11,6 +11,7 @@ import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 
 function App() {
   const [data, setData] = useState()
+  const [dataQuote, setDataQuote] = useState()
   const [see, setSee] = useState()
 
   useEffect(() => {
@@ -20,15 +21,22 @@ function App() {
     })
   },[setData])
 
-  const a = QuoteOfTheDay()
-  console.log(a)
+  useEffect(() => {
+    Axios.get('http://quotes.rest/qod.json?category=funny')
+    .then(response => {
+      setDataQuote(response.data)
+    })
+  },[setDataQuote])
+
+  console.log(dataQuote)
+
 
   if(!see){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
         {!data ? (<p>oops...something went wrong</p>) 
-        : (<FirstPagePhoto picture={barPrincipal} quote={a.contents.quotes[0].quote}></FirstPagePhoto>)}
+        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
@@ -52,21 +60,6 @@ function App() {
       </Main>
     );
   }
-}
-
-async function QuoteOfTheDay (){
-  let headersList = {
-    "Accept": "*/*",
-   }
-   
-   let reqOptions = {
-     url: "http://quotes.rest/qod.json?category=funny",
-     method: "GET",
-     headers: headersList,
-   }
-   
-   let response = await Axios.request(reqOptions);
-   console.log(response.data);
 }
 
 export default App;
