@@ -11,8 +11,10 @@ import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 
 function App() {
   const [data, setData] = useState()
+  const [alcohol, setAlcohol] = useState()
+  const [noAlcohol, setNoAlcohol] = useState()
   const [dataQuote, setDataQuote] = useState()
-  const [see, setSee] = useState()
+  const [see, setSee] = useState('main')
 
   useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
@@ -22,19 +24,30 @@ function App() {
   },[setData])
 
   useEffect(() => {
+    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+    .then(response => {
+      setAlcohol(response.data)
+    })
+  },[setAlcohol])
+
+  useEffect(() => {
+    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+    .then(response => {
+      setNoAlcohol(response.data)
+    })
+  },[setNoAlcohol])
+
+  useEffect(() => {
     Axios.get('http://quotes.rest/qod.json?category=funny')
     .then(response => {
       setDataQuote(response.data)
     })
   },[setDataQuote])
 
-  console.log(dataQuote)
-
-
-  if(!see){
+  if(see === 'main'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' />
+        <NavBar title='TravelBar' view={ setSee } />
         {!data ? (<p>oops...something went wrong</p>) 
         : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
@@ -44,19 +57,43 @@ function App() {
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
-        <Button text= 'See More' state= { setSee } more={true}/>
+        <Button text= 'See More' state= { setSee } more={'all'}/>
       </Main>
     );
   }
-  if(see){
+  if(see === 'all'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' />
+        <NavBar title='TravelBar' view={ setSee } />
         <SelectionTitle>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
         }
-        <Button text= 'Return' state= { setSee } more={false}/>
+        <Button text= 'Return' state= { setSee } more={'main'}/>
+      </Main>
+    );
+  }
+  if(see === 'alcohol'){
+    return (
+      <Main className="App">
+        <NavBar title='TravelBar' view={ setSee } />
+        <SelectionTitle>All Cocktails</SelectionTitle>
+        {!data ? (<p>oops...something went wrong</p>) 
+        : (<SelectionOfCocktails list={ alcohol.drinks } ></SelectionOfCocktails>)
+        }
+        <Button text= 'Return' state= { setSee } more={'main'}/>
+      </Main>
+    );
+  }
+  if(see === 'noAlcohol'){
+    return (
+      <Main className="App">
+        <NavBar title='TravelBar' view={ setSee } />
+        <SelectionTitle>All Cocktails</SelectionTitle>
+        {!data ? (<p>oops...something went wrong</p>) 
+        : (<SelectionOfCocktails list={ noAlcohol.drinks } ></SelectionOfCocktails>)
+        }
+        <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
     );
   }
