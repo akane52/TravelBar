@@ -1,19 +1,12 @@
 # TravelBar
 ## Índex
 1. [Cover photo](#id1)
-2. [Badges](#id2)
-3. [Project description](#id3)
-4. [Project status](#id4)
-5. [Project accessibility](#id5)
-6. [Technologies used](#id6)
+2. [Project description](#id3)
+3. [Project status](#id4)
+4. [Project accessibility](#id5)
+5. [Technologies used](#id6)
 
 <p name="id2"></p>
-
-![example react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
-![test](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
-![vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
 
 ![Principal page of the TravelBar website](https://user-images.githubusercontent.com/100280306/213275505-6f4ee726-5779-43b9-a220-ed8ed58443f9.png)<img name="id1"></img>
 
@@ -29,8 +22,9 @@ This is a bar where you can dance, play board games, listen to music... We also 
 https://travel-bar.vercel.app
 
 ## ✔️ Technologies used<a name="id6"></a>
-- React
-- Emotion/styled
-- Jest
-- Github
-- Axios
+
+![example react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
+![test](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
+![vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
