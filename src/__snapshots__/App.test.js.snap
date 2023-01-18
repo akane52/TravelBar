@@ -28,6 +28,9 @@ exports[`should take a snapshot from App 1`] = `
         </button>
       </div>
     </header>
+    <p>
+      oops...something went wrong
+    </p>
     <div>
       <h1
         class="css-nuuxdy"
