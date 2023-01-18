@@ -10,7 +10,7 @@ export const ContainerText = styled.div`
    display: flex;
    align-items: flex-start; 
 `
-export const Text = styled.p`
+export const Text = styled.button`
    @media (max-width: 700px) {
       top: 20%;
       font-size: 15px;
@@ -18,8 +18,11 @@ export const Text = styled.p`
    font-family: 'Inter';
    font-style: normal;
    font-size: 25px;
-   padding: 0.05% 5% 0.05% 5%;
+   padding: 0.9% 5% 0.9% 5%;
    font-weight: bold;
+   background: none;
+   border: none;
+   cursor:pointer;
    &:hover {
       color: #9747FF;
    }
