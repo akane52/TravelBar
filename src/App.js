@@ -79,6 +79,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
+        <NavBarType></NavBarType>
         <SelectionTitle>Cocktails With alcohol</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ alcohol.drinks } ></SelectionOfCocktails>)
@@ -91,6 +92,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
+        <NavBarType></NavBarType>
         <SelectionTitle>Cocktails Without alcohol</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ noAlcohol.drinks } ></SelectionOfCocktails>)
