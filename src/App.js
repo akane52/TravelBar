@@ -35,7 +35,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
-        {!data ? (<p>oops...something went wrong</p>) 
+        {!data ? (<p>oops...something went wrong </p>) 
         : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
