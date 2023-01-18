@@ -5,10 +5,13 @@ import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import TravelBarInformation from './components/InformationComponent/index'
 import barPhoto from "../src/resources/barPhoto.jpg"
+import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
+import barPrincipal from "../src/resources/bar.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 
 function App() {
   const [data, setData] = useState()
+  const [dataQuote, setDataQuote] = useState()
   const [see, setSee] = useState()
 
   useEffect(() => {
@@ -18,10 +21,22 @@ function App() {
     })
   },[setData])
 
+  useEffect(() => {
+    Axios.get('http://quotes.rest/qod.json?category=funny')
+    .then(response => {
+      setDataQuote(response.data)
+    })
+  },[setDataQuote])
+
+  console.log(dataQuote)
+
+
   if(!see){
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
+        {!data ? (<p>oops...something went wrong</p>) 
+        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
@@ -37,7 +52,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' />
-        <SelectionTitle>All Cocktail</SelectionTitle>
+        <SelectionTitle>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
         }
