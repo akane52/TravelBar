@@ -40,7 +40,7 @@ function App() {
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
-        <SelectionTitle data-testid='selection'>Selection of Cocktail</SelectionTitle>
+        <SelectionTitle data-testid='selection'>Random selection of Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
