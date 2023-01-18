@@ -48,8 +48,6 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        {!data ? (<p>oops...something went wrong</p>) 
-        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
@@ -77,7 +75,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <SelectionTitle>All Cocktails</SelectionTitle>
+        <SelectionTitle>Cocktails With alcohol</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ alcohol.drinks } ></SelectionOfCocktails>)
         }
@@ -89,7 +87,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <SelectionTitle>All Cocktails</SelectionTitle>
+        <SelectionTitle>Cocktails Without alcohol</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ noAlcohol.drinks } ></SelectionOfCocktails>)
         }
