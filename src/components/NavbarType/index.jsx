@@ -1,31 +1,44 @@
 import  { ContainerNB, ContainerText, Text }  from './styles'
-import { useEffect } from 'react';
 import './style.css'
 
-const NavbarType = ({selected}) => {
-  useEffect(() => {
-    selectedText({selected})
-      })
+const NavbarType = ({ view }) => {
+  
 
   function selectedText(str){
-    if(str.selected==='withAlchoholText'){
+    if(str==='withAlchoholText'){
       const element = document.getElementsByClassName('withAlchoholText')
+      view('alcohol')
       element[0].classList.add('withAchoholTextSelected')
-    }else if(str.selected==='noAchohol'){
+      const element1 = document.getElementsByClassName('allText')
+      element1[0].classList.remove('allTextSelected')
+      const element2 = document.getElementsByClassName('noAchoholText')
+      element2[0].classList.remove('noAchoholTextSelected')
+    }else if(str==='noAchohol'){
       const element = document.getElementsByClassName('noAchoholText')
+      view('noAlcohol')
       element[0].classList.add('noAchoholTextSelected')
-    }else{
+      const element1 = document.getElementsByClassName('allText')
+      element1[0].classList.remove('allTextSelected')
+      const element2 = document.getElementsByClassName('withAlchoholText')
+      element2[0].classList.remove('withAchoholTextSelected')
+    }else if(str==='allText'){
       const element = document.getElementsByClassName('allText')
+      view('all')
       element[0].classList.add('allTextSelected')
+      const element1 = document.getElementsByClassName('withAlchoholText')
+      element1[0].classList.remove('withAchoholTextSelected')
+      const element2 = document.getElementsByClassName('noAchoholText')
+      element2[0].classList.remove('noAchoholTextSelected')
+
     }
   }
 
     return (
       <ContainerNB>
         <ContainerText>
-          <Text className='allText'>All</Text>
-          <Text className='noAchoholText' >No achohol</Text>
-          <Text className='withAlchoholText'>With alcohol</Text>
+          <Text className='allText' onClick={() => {selectedText('allText')}}>All</Text>
+          <Text className='noAchoholText'  onClick={() => {selectedText('noAchohol')}} >No achohol</Text>
+          <Text className='withAlchoholText' onClick={() => {selectedText('withAlchoholText')}}>With alcohol</Text>
         </ContainerText>
       </ContainerNB>
     )
