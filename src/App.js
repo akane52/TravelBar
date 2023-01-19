@@ -31,6 +31,10 @@ function App() {
 
   console.log(dataQuote)
 
+  const eventHandler = () => {
+    console.log('main-page')
+      setSee(true)
+  }
 
   if(!see){
     return (
@@ -52,8 +56,8 @@ function App() {
   if(see){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' />
-        <NavBarType></NavBarType>
+        <NavBar title='TravelBar'/>
+        <NavBarType eventHandler={eventHandler}></NavBarType>
         <SelectionTitle>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)

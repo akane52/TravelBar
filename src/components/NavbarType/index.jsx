@@ -24,7 +24,6 @@ const NavbarType = ({selected}) => {
     return (
       <ContainerNB>
         <ContainerText>
-
           <Text className='allText'>All</Text>
           <Text className='noAchoholText' >No achohol</Text>
           <Text className='withAlchoholText'>With alcohol</Text>
