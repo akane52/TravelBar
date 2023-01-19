@@ -8,7 +8,7 @@ const TravelBarInformation = ({picture}) =>{
             <Information>
                 <PurpleSquare>
                     <InformationSquare>
-                        Set within a historic 17th century Dutch house in picturesque Central Amsterdam, TravelBar is the first international venue from Mr Lyan and team who brought you Seed Library, Silver Lyan, Cub, Lyaness and more.
+                        Set within a historic 17th century Spanish house in Central Barcelona.<br></br>
                         A casual cocktail bar offering kick ass cocktails, beers, wine and bites late into the night.
                         The playful sibling in the family uses all the experience across our history to create expanded versions of familiar serves, alongside some unexpected gems.
                         <br></br>A bar where you can dance, play board games, listen to music... We also have karaoke and open mic nights where you can get to know new talents.

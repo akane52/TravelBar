@@ -15,15 +15,13 @@ export const Text = styled.button`
       top: 20%;
       font-size: 15px;
    }
-   font-family: 'Inter';
-   font-style: normal;
    font-size: 25px;
    padding: 0.9% 5% 0.9% 5%;
    font-weight: bold;
    background: none;
    border: none;
-   cursor:pointer;
    &:hover {
       color: #9747FF;
+      cursor: pointer;
    }
 `
