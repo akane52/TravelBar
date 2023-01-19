@@ -1,14 +1,14 @@
-import { Main, SelectionTitle } from './styles.js';
+import { Main, SelectionTitle } from './styles.js'
 import Button from './components/Button'
-import NavBar from './components/NavBar';
-import { useState,useEffect } from 'react';
+import NavBar from './components/NavBar'
+import { useState,useEffect } from 'react'
 import Axios from 'axios';
 import TravelBarInformation from './components/InformationComponent/index'
 import barPhoto from "../src/resources/barPhoto.jpg"
-import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
+import FirstPagePhoto from './components/FirstPagePhoto/index.jsx'
 import barPrincipal from "../src/resources/bar.jpg"
-import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
-import NavBarType from './components/NavbarType';
+import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx'
+import NavBarType from './components/NavbarType'
 
 function App() {
   const [data, setData] = useState()
