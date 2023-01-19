@@ -48,7 +48,7 @@ function App() {
   if(see === 'main'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' state= { setSee }/>
+        <NavBar title='TravelBar' view= { setSee }/>
         {!dataQuote ? (<p>oops...something went wrong </p>) 
         : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote[Math.floor(Math.random() * 1400)].text}></FirstPagePhoto>)}
         <TravelBarInformation
