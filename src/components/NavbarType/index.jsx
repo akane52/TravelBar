@@ -1,6 +1,5 @@
 import  { ContainerNB, ContainerText, Text }  from './styles'
 import { useEffect } from 'react';
-
 import './style.css'
 
 const NavbarType = ({selected}) => {

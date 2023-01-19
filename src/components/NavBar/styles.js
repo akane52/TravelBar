@@ -38,5 +38,6 @@ export const Buttons = styled.div`
         position: relative;
     }
     position: absolute;
-    right: 5%;
+    right: 4%;
+    display: flex;
 `
