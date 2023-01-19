@@ -35,9 +35,9 @@ const NavbarType = ({ view }) => {
     return (
       <ContainerNB>
         <ContainerText>
-          <Text className='allText' onClick={() => {selectedText('allText')}}>All</Text>
-          <Text className='noAchoholText'  onClick={() => {selectedText('noAchohol')}} >No achohol</Text>
-          <Text className='withAlchoholText' onClick={() => {selectedText('withAlchoholText')}}>With alcohol</Text>
+          <Text className='allText' data-testid='navBtnAll' onClick={() => {selectedText('allText')}}>All</Text>
+          <Text className='noAchoholText'  data-testid='navBtnNoAlcohol' onClick={() => {selectedText('noAchohol')}} >No achohol</Text>
+          <Text className='withAlchoholText' data-testid='navBtnAlcohol' onClick={() => {selectedText('withAlchoholText')}}>With alcohol</Text>
         </ContainerText>
       </ContainerNB>
     )
