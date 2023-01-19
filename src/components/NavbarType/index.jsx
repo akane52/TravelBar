@@ -3,7 +3,6 @@ import './style.css'
 
 const NavbarType = ({ view }) => {
   
-
   function selectedText(str){
     if(str==='withAlchoholText'){
       const element = document.getElementsByClassName('withAlchoholText')
