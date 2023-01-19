@@ -67,7 +67,7 @@ function App() {
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
         <NavBarType></NavBarType>
-        <SelectionTitle>All Cocktails</SelectionTitle>
+        <SelectionTitle data-testid='selection'>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
         }

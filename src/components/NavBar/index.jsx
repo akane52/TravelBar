@@ -5,8 +5,8 @@ const NavBar = ({ title, view }) => {
       <Header>
         <Title>{title}</Title>
         <Buttons>
-          <Button onClick={() => {view('alcohol')}}>Alcoholic</Button>
-          <Button onClick={() => {view('noAlcohol')}}>Non alcoholic</Button>
+          <Button data-testid='btnAlcohol' onClick={() => {view('alcohol')}}>Alcoholic</Button>
+          <Button data-testid='btnNOAlcohol' onClick={() => {view('noAlcohol')}}>Non alcoholic</Button>
         </Buttons>
       </Header>
     )
