@@ -60,46 +60,46 @@ function App() {
         }
         <Button text= 'See More' state= { setSee } more={'all'}/>
       </Main>
-    );
+    )
   }
   if(see === 'all'){
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <NavBarType></NavBarType>
+        <NavBarType view={ setSee }></NavBarType>
         <SelectionTitle data-testid='selection'>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
         }
         <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
-    );
+    )
   }
   if(see === 'alcohol'){
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <NavBarType></NavBarType>
+        <NavBarType view={ setSee }></NavBarType>
         <SelectionTitle data-testid='selection'>Cocktails With alcohol</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ alcohol.drinks } ></SelectionOfCocktails>)
         }
         <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
-    );
+    )
   }
   if(see === 'noAlcohol'){
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <NavBarType></NavBarType>
+        <NavBarType view={ setSee }></NavBarType>
         <SelectionTitle data-testid='selection'>Cocktails Without alcohol</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ noAlcohol.drinks } ></SelectionOfCocktails>)
         }
         <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
-    );
+    )
   }
 }
 
