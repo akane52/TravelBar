@@ -12,8 +12,10 @@ import NavBarType from './components/NavbarType';
 
 function App() {
   const [data, setData] = useState()
+  const [alcohol, setAlcohol] = useState()
+  const [noAlcohol, setNoAlcohol] = useState()
   const [dataQuote, setDataQuote] = useState()
-  const [see, setSee] = useState()
+  const [see, setSee] = useState('main')
 
   useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
@@ -23,46 +25,79 @@ function App() {
   },[setData])
 
   useEffect(() => {
-    Axios.get('http://quotes.rest/qod.json?category=funny')
+    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
+    .then(response => {
+      setAlcohol(response.data)
+    })
+  },[setAlcohol])
+
+  useEffect(() => {
+    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
+    .then(response => {
+      setNoAlcohol(response.data)
+    })
+  },[setNoAlcohol])
+
+  useEffect(() => {
+    Axios.get('https://type.fit/api/quotes')
     .then(response => {
       setDataQuote(response.data)
     })
   },[setDataQuote])
 
-  console.log(dataQuote)
-
-  const eventHandler = () => {
-    console.log('main-page')
-      setSee(true)
-  }
-
-  if(!see){
+  if(see === 'main'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' />
-        {!data ? (<p>oops...something went wrong</p>) 
-        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote.contents.quotes[0].quote}></FirstPagePhoto>)}
+        <NavBar title='TravelBar' view= { setSee }/>
+        {!dataQuote ? (<p>oops...something went wrong </p>) 
+        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote[Math.floor(Math.random() * 1400)].text}></FirstPagePhoto>)}
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
-        <SelectionTitle data-testid='selection'>Selection of Cocktail</SelectionTitle>
+        <SelectionTitle data-testid='selection'>Random selection of Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
-        <Button text= 'See More' state= { setSee } more={true}/>
+        <Button text= 'See More' state= { setSee } more={'all'}/>
       </Main>
     );
   }
-  if(see){
+  if(see === 'all'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar'/>
+        <NavBar title='TravelBar' view={ setSee } />
         <NavBarType></NavBarType>
         <SelectionTitle>All Cocktails</SelectionTitle>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
         }
-        <Button text= 'Return' state= { setSee } more={false}/>
+        <Button text= 'Return' state= { setSee } more={'main'}/>
+      </Main>
+    );
+  }
+  if(see === 'alcohol'){
+    return (
+      <Main className="App">
+        <NavBar title='TravelBar' view={ setSee } />
+        <NavBarType></NavBarType>
+        <SelectionTitle>Cocktails With alcohol</SelectionTitle>
+        {!data ? (<p>oops...something went wrong</p>) 
+        : (<SelectionOfCocktails list={ alcohol.drinks } ></SelectionOfCocktails>)
+        }
+        <Button text= 'Return' state= { setSee } more={'main'}/>
+      </Main>
+    );
+  }
+  if(see === 'noAlcohol'){
+    return (
+      <Main className="App">
+        <NavBar title='TravelBar' view={ setSee } />
+        <NavBarType></NavBarType>
+        <SelectionTitle>Cocktails Without alcohol</SelectionTitle>
+        {!data ? (<p>oops...something went wrong</p>) 
+        : (<SelectionOfCocktails list={ noAlcohol.drinks } ></SelectionOfCocktails>)
+        }
+        <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
     );
   }

@@ -1,13 +1,12 @@
 import { Header, Title, Button, Buttons } from './styles'
 
-const NavBar = ({ title,state}) => {
- 
+const NavBar = ({ title, view }) => {
     return (
       <Header>
         <Title>{title}</Title>
         <Buttons>
-          <Button>Alcoholic</Button>
-          <Button>Non alcoholic</Button>
+          <Button onClick={() => {view('alcohol')}}>Alcoholic</Button>
+          <Button onClick={() => {view('noAlcohol')}}>Non alcoholic</Button>
         </Buttons>
       </Header>
     )

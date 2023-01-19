@@ -2,20 +2,27 @@ import styled from '@emotion/styled'
 
 export const ContainerNB = styled.div`
    background-color: #EEDCFB;
-
 `
 export const ContainerText = styled.div`
+   @media (max-width: 700px) {
+      margin-left: 15%;
+   }
    display: flex;
    align-items: flex-start; 
 `
 export const Text = styled.button`
-   background-color: #EEDCFB;
+   @media (max-width: 700px) {
+      top: 20%;
+      font-size: 15px;
+   }
    font-family: 'Inter';
    font-style: normal;
    font-size: 25px;
-   border: 0px;
-   padding: 0.2% 5% 0.2% 5%;
+   padding: 0.9% 5% 0.9% 5%;
    font-weight: bold;
+   background: none;
+   border: none;
+   cursor:pointer;
    &:hover {
       color: #9747FF;
    }
