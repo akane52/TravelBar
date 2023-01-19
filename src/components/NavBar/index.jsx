@@ -1,10 +1,10 @@
 import { Header, Title, Button, Buttons } from './styles'
 
-const NavBar = ({ title,eventHandler}) => {
+const NavBar = ({ title,state}) => {
  
     return (
       <Header>
-        <Title onClick={eventHandler}>{title}</Title>
+        <Title>{title}</Title>
         <Buttons>
           <Button>Alcoholic</Button>
           <Button>Non alcoholic</Button>
