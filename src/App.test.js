@@ -14,8 +14,20 @@ it('should be Selection of Cocktail', () => {
     expect(getByTestId('selection')).toHaveTextContent('Selection of Cocktail')
 });
 
-it('increments counter', () => {
+it('Selection all cocktails', () => {
     const { getByTestId } = render(<App />);     
     fireEvent.click(getByTestId('btn'))
     expect(getByTestId('selection')).toHaveTextContent('All Cocktails')
+});
+
+it('Selection Alcohol', () => {
+    const { getByTestId } = render(<App />);     
+    fireEvent.click(getByTestId('btnAlcohol'))
+    expect(getByTestId('selection')).toHaveTextContent('Cocktails With alcohol')
+});
+
+it('Selection No Alcohol', () => {
+    const { getByTestId } = render(<App />);     
+    fireEvent.click(getByTestId('btnNOAlcohol'))
+    expect(getByTestId('selection')).toHaveTextContent('Cocktails Without alcohol')
 });
