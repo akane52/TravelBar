@@ -65,7 +65,7 @@ export const Picture = styled.div`
 
 export const BarPicture = styled.img`
     border-radius: 10px;
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     margin-right: 5%;
 `

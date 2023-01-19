@@ -10,11 +10,12 @@ export const Container = styled.div`
     margin: 1%;
 `
 export const CocktailPicture = styled.img`
-    height: 120px;
+    height: 100px;
     border-radius: 10%;
     width: 100px;
 `
 export const CocktailTitle = styled.p`
     width: 130px;
     padding-bottom: 1%;
+    font-size: 15px;
 `
