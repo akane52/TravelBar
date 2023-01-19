@@ -16,6 +16,10 @@ export const Header = styled.header`
 export const Title = styled.h1`
     display: inline-block;
     padding-left: 3%;
+    &:hover {
+        color: #EEDCFB;
+        cursor: pointer;
+     }
 `
 export const Button = styled.button`
     @media (max-width: 700px) {

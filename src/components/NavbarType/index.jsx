@@ -2,11 +2,8 @@ import  { ContainerNB, ContainerText, Text }  from './styles'
 import { useEffect } from 'react';
 import './style.css'
 
-const NavbarType = ({selected}) => {
-  useEffect(() => {
-    selectedText({selected})
-      })
-
+const NavbarType = ({ view }) => {
+  
   function selectedText(str){
     if(str.selected==='withAlchoholText'){
       const element = document.getElementsByClassName('withAlchoholText')

@@ -14,6 +14,7 @@ export const Text = styled.button`
    @media (max-width: 700px) {
       top: 20%;
       font-size: 15px;
+      color: #black;
    }
    font-family: 'Inter';
    font-style: normal;
