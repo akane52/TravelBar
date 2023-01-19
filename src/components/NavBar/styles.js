@@ -34,7 +34,7 @@ export const Button = styled.button`
 export const Buttons = styled.div`
     @media (max-width: 700px) {
         margin-top: -15%;
-        margin-left: 13%;
+        margin-left: 33%;
         position: relative;
     }
     position: absolute;
