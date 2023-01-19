@@ -60,7 +60,7 @@ function App() {
         }
         <Button text= 'See More' state= { setSee } more={'all'}/>
       </Main>
-    );
+    )
   }
   if(see === 'all'){
     return (
@@ -73,7 +73,7 @@ function App() {
         }
         <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
-    );
+    )
   }
   if(see === 'alcohol'){
     return (
@@ -86,7 +86,7 @@ function App() {
         }
         <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
-    );
+    )
   }
   if(see === 'noAlcohol'){
     return (
@@ -99,7 +99,7 @@ function App() {
         }
         <Button text= 'Return' state= { setSee } more={'main'}/>
       </Main>
-    );
+    )
   }
 }
 

@@ -18,7 +18,7 @@ export const Title = styled.h1`
     padding-left: 3%;
 `
 export const Button = styled.button`
-    @media (max-width: 700px) {
+    @media only screen and (max-width:500px) {
         font-size: 15px;
     }
     color: #D9D9D9;
@@ -33,10 +33,10 @@ export const Button = styled.button`
 `
 export const Buttons = styled.div`
     @media (max-width: 700px) {
-        margin-top: -19%;
-        margin-left: 5%;
+        margin-top: -15%;
+        margin-left: 13%;
         position: relative;
     }
     position: absolute;
-    right: 0;
+    right: 5%;
 `
