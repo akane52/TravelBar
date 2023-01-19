@@ -31,3 +31,24 @@ it('Selection No Alcohol', () => {
     fireEvent.click(getByTestId('btnNoAlcohol'))
     expect(getByTestId('selection')).toHaveTextContent('Cocktails Without alcohol')
 });
+
+it('Selection nav all cocktails', () => {
+    const { getByTestId } = render(<App />);
+    fireEvent.click(getByTestId('btn'))     
+    fireEvent.click(getByTestId('navBtnAll'))
+    expect(getByTestId('selection')).toHaveTextContent('All Cocktails')
+});
+
+it('Selection nav Alcohol', () => {
+    const { getByTestId } = render(<App />);
+    fireEvent.click(getByTestId('btn'))     
+    fireEvent.click(getByTestId('navBtnAlcohol'))
+    expect(getByTestId('selection')).toHaveTextContent('Cocktails With alcohol')
+});
+
+it('Selection nav No Alcohol', () => {
+    const { getByTestId } = render(<App />);
+    fireEvent.click(getByTestId('btn'))     
+    fireEvent.click(getByTestId('navBtnNoAlcohol'))
+    expect(getByTestId('selection')).toHaveTextContent('Cocktails Without alcohol')
+});
