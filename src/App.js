@@ -1,17 +1,14 @@
-import { Main, SelectionTitle } from './styles.js';
-import Button from './components/Button'
+import { Main } from './styles.js';
 import NavBar from './components/NavBar';
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
-import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
-import NavBarType from './components/NavbarType';
 import MainPage from './components/MainPage/index.jsx';
 import AllDrinksPage from './components/AllDrinksPage/index.jsx';
 import SelectionAlcoholPage from './components/SelectionAlcoholPage/index.jsx';
+import SelectionNoAlcoholPage from './components/SelectionNoAlcoholPage/index.jsx';
 
 function App() {
   const [data, setData] = useState()
-  const [noAlcohol, setNoAlcohol] = useState()
   const [see, setSee] = useState('main')
 
   useEffect(() => {
@@ -21,17 +18,10 @@ function App() {
     })
   },[setData])
 
-  useEffect(() => {
-    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
-    .then(response => {
-      setNoAlcohol(response.data)
-    })
-  },[setNoAlcohol])
-
   if(see === 'main'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' view= { setSee } />
+        <NavBar title='TravelBar' view = { setSee } />
         <MainPage data= { data } setSee = { setSee } />
       </Main>
     )
@@ -39,7 +29,7 @@ function App() {
   if(see === 'all'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' view={ setSee } />
+        <NavBar title='TravelBar' view = { setSee } />
         <AllDrinksPage data= { data } setSee = { setSee } />
       </Main>
     )
@@ -47,7 +37,7 @@ function App() {
   if(see === 'alcohol'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' view={ setSee } />
+        <NavBar title='TravelBar' view= { setSee } />
         <SelectionAlcoholPage setSee = { setSee } />
       </Main>
     )
@@ -56,12 +46,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <NavBarType view={ setSee }></NavBarType>
-        <SelectionTitle data-testid='selection'>Cocktails Without alcohol</SelectionTitle>
-        {!data ? (<p>oops...something went wrong</p>) 
-        : (<SelectionOfCocktails list={ noAlcohol.drinks } ></SelectionOfCocktails>)
-        }
-        <Button text= 'Return' state= { setSee } more={'main'}/>
+        <SelectionNoAlcoholPage setSee = { setSee } />
       </Main>
     )
   }
