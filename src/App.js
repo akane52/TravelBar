@@ -6,6 +6,7 @@ import Axios from 'axios';
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 import NavBarType from './components/NavbarType';
 import MainPage from './components/MainPage/index.jsx';
+import AllDrinksPage from './components/AllDrinksPage/index.jsx';
 
 function App() {
   const [data, setData] = useState()
@@ -46,12 +47,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <NavBarType view={ setSee }></NavBarType>
-        <SelectionTitle data-testid='selection'>All Cocktails</SelectionTitle>
-        {!data ? (<p>oops...something went wrong</p>) 
-        : (<SelectionOfCocktails list={ data.drinks } ></SelectionOfCocktails>)
-        }
-        <Button text= 'Return' state= { setSee } more={'main'}/>
+        <AllDrinksPage data= { data } setSee = { setSee }/>
       </Main>
     )
   }
