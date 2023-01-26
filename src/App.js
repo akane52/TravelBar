@@ -18,38 +18,20 @@ function App() {
     })
   },[setData])
 
-  if(see === 'main'){
     return (
       <Main className="App">
         <NavBar title='TravelBar' view = { setSee } />
-        <MainPage data= { data } setSee = { setSee } />
+        {see === 'main'?
+        (<MainPage data= { data } setSee = { setSee } />)
+        : see === 'all'?
+        (<AllDrinksPage data= { data } setSee = { setSee } />)
+        : see === 'alcohol'?
+        (<SelectionAlcoholPage setSee = { setSee } />)
+        : see === 'noAlcohol'?
+        (<SelectionNoAlcoholPage setSee = { setSee } />)
+        : (<p>oops...something went wrong</p>)
+        }
       </Main>
     )
-  }
-  if(see === 'all'){
-    return (
-      <Main className="App">
-        <NavBar title='TravelBar' view = { setSee } />
-        <AllDrinksPage data= { data } setSee = { setSee } />
-      </Main>
-    )
-  }
-  if(see === 'alcohol'){
-    return (
-      <Main className="App">
-        <NavBar title='TravelBar' view= { setSee } />
-        <SelectionAlcoholPage setSee = { setSee } />
-      </Main>
-    )
-  }
-  if(see === 'noAlcohol'){
-    return (
-      <Main className="App">
-        <NavBar title='TravelBar' view={ setSee } />
-        <SelectionNoAlcoholPage setSee = { setSee } />
-      </Main>
-    )
-  }
 }
-
 export default App;

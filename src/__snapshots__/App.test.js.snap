@@ -72,7 +72,7 @@ exports[`should take a snapshot from App 1`] = `
         </div>
       </div>
       <h1
-        class="css-11rcl5f"
+        class="css-nj4lov"
         data-testid="selection"
       >
         Selection of Cocktails
@@ -80,13 +80,13 @@ exports[`should take a snapshot from App 1`] = `
       <p>
         oops...something went wrong
       </p>
+      <button
+        class="css-ref9l6"
+        data-testid="btn"
+      >
+        See More
+      </button>
     </div>
-    <button
-      class="css-ref9l6"
-      data-testid="btn"
-    >
-      See More
-    </button>
   </div>
 </DocumentFragment>
 `;
