@@ -3,18 +3,15 @@ import Button from './components/Button'
 import NavBar from './components/NavBar';
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
-import TravelBarInformation from './components/InformationComponent/index'
-import barPhoto from "../src/resources/barPhoto.jpg"
-import FirstPagePhoto from './components/FirstPagePhoto/index.jsx';
-import barPrincipal from "../src/resources/bar.jpg"
 import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 import NavBarType from './components/NavbarType';
+import MainPage from './components/MainPage/index.jsx';
 
 function App() {
   const [data, setData] = useState()
   const [alcohol, setAlcohol] = useState()
   const [noAlcohol, setNoAlcohol] = useState()
-  const [dataQuote, setDataQuote] = useState()
+  
   const [see, setSee] = useState('main')
 
   useEffect(() => {
@@ -38,26 +35,11 @@ function App() {
     })
   },[setNoAlcohol])
 
-  useEffect(() => {
-    Axios.get('https://type.fit/api/quotes')
-    .then(response => {
-      setDataQuote(response.data)
-    })
-  },[setDataQuote])
-
   if(see === 'main'){
     return (
       <Main className="App">
         <NavBar title='TravelBar' view= { setSee }/>
-        {!dataQuote ? (<p>oops...something went wrong </p>) 
-        : (<FirstPagePhoto picture={barPrincipal} quote={dataQuote[Math.floor(Math.random() * 1400)].text}></FirstPagePhoto>)}
-        <TravelBarInformation
-          picture={barPhoto}
-        ></TravelBarInformation>
-        <SelectionTitle data-testid='selection'>Selection of Cocktails</SelectionTitle>
-        {!data ? (<p>oops...something went wrong</p>) 
-        : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
-        }
+        <MainPage data= { data } />
         <Button text= 'See More' state= { setSee } more={'all'}/>
       </Main>
     )
