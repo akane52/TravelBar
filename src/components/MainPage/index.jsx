@@ -1,9 +1,9 @@
 import FirstPagePhoto from "../FirstPagePhoto"
 import TravelBarInformation from "../InformationComponent"
 import SelectionOfCocktails from "../SelectionOfCocktail"
+import DrinksSelectionTitle from "../DrinksSelectionTitle";
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
-import { SelectionTitle } from "../../styles"
 import barPrincipal from "../../resources/bar.jpg"
 import barPhoto from "../../resources/barPhoto.jpg"
 
@@ -24,7 +24,7 @@ const MainPage = ({ data }) => {
         <TravelBarInformation
           picture={barPhoto}
         ></TravelBarInformation>
-        <SelectionTitle data-testid='selection'>Selection of Cocktails</SelectionTitle>
+        <DrinksSelectionTitle textTitle='Selection of Cocktails'/>
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
