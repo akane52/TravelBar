@@ -7,10 +7,10 @@ import SelectionOfCocktails from './components/SelectionOfCocktail/index.jsx';
 import NavBarType from './components/NavbarType';
 import MainPage from './components/MainPage/index.jsx';
 import AllDrinksPage from './components/AllDrinksPage/index.jsx';
+import SelectionAlcoholPage from './components/SelectionAlcoholPage/index.jsx';
 
 function App() {
   const [data, setData] = useState()
-  const [alcohol, setAlcohol] = useState()
   const [noAlcohol, setNoAlcohol] = useState()
   const [see, setSee] = useState('main')
 
@@ -22,13 +22,6 @@ function App() {
   },[setData])
 
   useEffect(() => {
-    Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
-    .then(response => {
-      setAlcohol(response.data)
-    })
-  },[setAlcohol])
-
-  useEffect(() => {
     Axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
     .then(response => {
       setNoAlcohol(response.data)
@@ -38,8 +31,8 @@ function App() {
   if(see === 'main'){
     return (
       <Main className="App">
-        <NavBar title='TravelBar' view= { setSee }/>
-        <MainPage data= { data } setSee = { setSee }/>
+        <NavBar title='TravelBar' view= { setSee } />
+        <MainPage data= { data } setSee = { setSee } />
       </Main>
     )
   }
@@ -47,7 +40,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <AllDrinksPage data= { data } setSee = { setSee }/>
+        <AllDrinksPage data= { data } setSee = { setSee } />
       </Main>
     )
   }
@@ -55,12 +48,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view={ setSee } />
-        <NavBarType view={ setSee }></NavBarType>
-        <SelectionTitle data-testid='selection'>Cocktails With alcohol</SelectionTitle>
-        {!data ? (<p>oops...something went wrong</p>) 
-        : (<SelectionOfCocktails list={ alcohol.drinks } ></SelectionOfCocktails>)
-        }
-        <Button text= 'Return' state= { setSee } more={'main'}/>
+        <SelectionAlcoholPage setSee = { setSee } />
       </Main>
     )
   }
