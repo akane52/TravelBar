@@ -11,7 +11,6 @@ function App() {
   const [data, setData] = useState()
   const [alcohol, setAlcohol] = useState()
   const [noAlcohol, setNoAlcohol] = useState()
-  
   const [see, setSee] = useState('main')
 
   useEffect(() => {
@@ -39,8 +38,7 @@ function App() {
     return (
       <Main className="App">
         <NavBar title='TravelBar' view= { setSee }/>
-        <MainPage data= { data } />
-        <Button text= 'See More' state= { setSee } more={'all'}/>
+        <MainPage data= { data } setSee = { setSee }/>
       </Main>
     )
   }

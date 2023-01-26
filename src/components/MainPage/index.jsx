@@ -2,12 +2,13 @@ import FirstPagePhoto from "../FirstPagePhoto"
 import TravelBarInformation from "../InformationComponent"
 import SelectionOfCocktails from "../SelectionOfCocktail"
 import DrinksSelectionTitle from "../DrinksSelectionTitle";
+import Button from "../Button";
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import barPrincipal from "../../resources/bar.jpg"
 import barPhoto from "../../resources/barPhoto.jpg"
 
-const MainPage = ({ data }) => {
+const MainPage = ({ data, setSee }) => {
     const [dataQuote, setDataQuote] = useState()
 
     useEffect(() => {
@@ -28,6 +29,7 @@ const MainPage = ({ data }) => {
         {!data ? (<p>oops...something went wrong</p>) 
         : (<SelectionOfCocktails list={ data.drinks.slice(70,80) } ></SelectionOfCocktails>)
         }
+        <Button text= 'See More' state= { setSee } more={'all'}/>
       </div>
     )
   }
