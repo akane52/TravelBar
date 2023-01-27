@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot from App 1`] = `
+<DocumentFragment>
+  <div
+    class="App css-1dqid6c"
+  >
+    <header
+      class="css-10dantf"
+    >
+      <h1
+        class="css-aknc9a"
+      >
+        TravelBar
+      </h1>
+      <div
+        class="css-p5lzhc"
+      >
+        <button
+          class="css-1t8a2ny"
+          data-testid="btnAlcohol"
+        >
+          Alcoholic
+        </button>
+        <button
+          class="css-1t8a2ny"
+          data-testid="btnNoAlcohol"
+        >
+          Non alcoholic
+        </button>
+      </div>
+    </header>
+    <div>
+      <p>
+        oops...something went wrong 
+      </p>
+      <div>
+        <h1
+          class="css-nuuxdy"
+        >
+          ¿What's TravelBar?
+        </h1>
+        <div
+          class="css-11w4xf7"
+        >
+          <div
+            class="css-qelhqh"
+          >
+            <p
+              class="css-12kbceo"
+            >
+              Set within a historic 17th century Spanish house in Central Barcelona.
+              <br />
+              A casual cocktail bar offering kick ass cocktails, beers, wine and bites late into the night. The playful sibling in the family uses all the experience across our history to create expanded versions of familiar serves, alongside some unexpected gems.
+              <br />
+              A bar where you can dance, play board games, listen to music... We also have karaoke and open mic nights where you can get to know new talents.
+              <br />
+              Your kids are more than welcomed here. We have cocktails without alcohol just for them.
+              <br />
+              <br />
+              Just come and have fun!!
+            </p>
+          </div>
+          <div
+            class="css-1hwkwgf"
+          >
+            <img
+              class="css-qra5nm"
+              src="barPhoto.jpg"
+            />
+          </div>
+        </div>
+      </div>
+      <h1
+        class="css-nj4lov"
+        data-testid="selection"
+      >
+        Selection of Cocktails
+      </h1>
+      <p>
+        oops...something went wrong
+      </p>
+      <button
+        class="css-ref9l6"
+        data-testid="btn"
+      >
+        See More
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
