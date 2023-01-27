@@ -19,7 +19,7 @@ This is a bar where you can dance, play board games, listen to music... We also 
 :construction: Project under construction :construction:
 
 ## 📁Project accessibility<a name="id5"></a>
-https://travel-bar.vercel.app
+https://travel-bar-xi.vercel.app
 
 ## ✔️ Technologies used<a name="id6"></a>
 
