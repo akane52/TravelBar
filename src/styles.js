@@ -5,7 +5,3 @@ export const Main = styled.div`
     background-color: #1E1E1E;
     padding-bottom: 1%;
 `
-
-export const SelectionTitle = styled.h1`
-    color: #892CDC;
-`
